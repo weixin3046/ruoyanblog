@@ -5,7 +5,7 @@ var swig = require('swig');
 var mongoose = require('mongoose');
 
 //加载body-parser，用来处理提交过来的数据
-var bodyParser = require('body-parser'); 
+var bodyParser = require('body-parser');
 
 //创建app应用 => NodeJS Http.createServer();
 var app = express();
@@ -36,7 +36,7 @@ app.use('/public', express.static(__dirname + '/public'));
 // 定义当前应用所使用的模板引擎
 //第一个参数：模板引擎的名称，同时也是模板文件的后缀
 app.engine('html', swig.renderFile);
-//设置模板文件存放的目录 第一个参数必须是views，第二个参数是目录 
+//设置模板文件存放的目录 第一个参数必须是views，第二个参数是目录
 //app.set（名称，值）
 app.set('views', './views');
 //注册模板，第一个参数必须是view engine，第二个参数和app.engine这个方法定义的模板引擎名称一致
@@ -65,7 +65,7 @@ app.use( bodyParser.urlencoded({extended: true}));
 //     res.send('<h1>这是我的第一个博客</h1>');
 //     res.render('index');
 // });
- 
+
 /**
  * 第一个参数匹配以'/admin'开头的路径（这里路径说的是客户端）
  * 第二个参数是路径匹配后执行的功能
