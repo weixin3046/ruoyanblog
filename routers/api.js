@@ -4,6 +4,11 @@ var User = require('../models/User');
 //统一返回格式
 var responseData;
 router.use(function(req, res, next){
+	//只有中间件有req, res, next这三个参数
+	//req代表客户端请求
+	//res代表服务端响应
+	//响应下一个中间件next()
+	//如果有 2 个或 3 个参数,头两个参数是请求和响应对象,第三个参数是 next 函数。如果有 4 个参数,它就变成了错误处理中间件,第一个参数变成了错误对象,然后依次是请求、响应和 next 对象
 	responseData = {
 		code: 0,
 		message: ''
