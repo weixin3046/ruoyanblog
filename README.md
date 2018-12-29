@@ -1,5 +1,4 @@
-#目录
-
+# 目录
 db
 models
 piblic
@@ -7,14 +6,14 @@ routers
 schemas
 views
 
-#只删除githup目录不删除本地目录  
+# 只删除githup目录不删除本地目录  
 1. 先更新 git pull
 2. dir 查看文件目录
 3. 删除 git rm -r --cached + 文件名
 4. 提交 git commi -m"提交说明"
 5. git push 上传代码到githup
 
-#数据库操作
+# 数据库操作
 1. mongod --dbpath=D:\runzhong\Node\ruoyanblog\db --port=27018
 2. 数据库下载地址 https://www.mongodb.com/download-center/community
 3. 图形化mongodb数据库管理工具  https://robomongo.org/
@@ -25,7 +24,7 @@ views
 [license or china language](http://blog.csdn.net/kencaber/article/details/50651207、http://devework.com/sublime-text-3.html)
 [Package Control](https://packagecontrol.io/installation#st3)、[more...](#package-control)
 
-#Git
+# Git
 [git](http://git-scm.com/download/)
 
 # Node.js & NPM
