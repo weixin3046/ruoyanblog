@@ -28,4 +28,4 @@ mongod --dbpath=D:\runzhong\Node\ruoyanblog\db --port=27018
 
 图形化mongodb数据库管理工具  https://robomongo.org/
 
-从 MongoDB 目录的 bin 目录中执行 mongod.exe 文件
+从 MongoDB 目录的 bin 目录中执行 mongod.exe 文件；
