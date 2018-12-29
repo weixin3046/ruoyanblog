@@ -15,4 +15,4 @@ command + m markdown文件生成html文件
 
 一键删除多余空格 command + shift + t
 
-alignment  option + command + a  暂时不能用 可能是快捷键冲突
+alignment  option + command + a  暂时不能用 可能是快捷键冲突 !已删除
