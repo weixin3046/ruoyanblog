@@ -20,6 +20,18 @@ views
 3. 图形化mongodb数据库管理工具  https://robomongo.org/
 4. 从 MongoDB 目录的 bin 目录中执行 mongod.exe 文件
 
+# Sublime Text 3
+[download and install](http://www.sublimetext.com/3)
+[license or china language](http://blog.csdn.net/kencaber/article/details/50651207、http://devework.com/sublime-text-3.html)
+[Package Control](https://packagecontrol.io/installation#st3)、[more...](#package-control)
+
+#Git
+[git](http://git-scm.com/download/)
+
+# Node.js & NPM
+[Windows Installer (.msi)](https://nodejs.org/en/download/)
+`node -v`、`npm -v`
+
 ## Markdown
 [markdown.cn](http://www.markdown.cn/)
 [github markdown](https://guides.github.com/features/mastering-markdown/)
