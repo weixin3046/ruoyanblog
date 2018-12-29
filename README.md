@@ -25,9 +25,9 @@ views
 [github markdown](https://guides.github.com/features/mastering-markdown/)
 
 ## Package Control
-`TortoiseSVN` SVN `Alt+C`:Commit,`Alt+U`:Update,`Alt+R`:Revert
-`IMESupport` 中文输入法光标跟随
-`Markdown Editing`
+`TortoiseSVN` SVN `Alt+C`:Commit,`Alt+U`:Update,`Alt+R`:Revert;
+`IMESupport` 中文输入法光标跟随;
+`Markdown Editing`;
 `Markdown Preview` Alt+P，在浏览器中预览
 `JsFormat` Ctrl+Alt+F，格式化
 `HTML-CSS-JS Prettify` Ctrl+Shift+H，格式化
