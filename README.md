@@ -10,7 +10,7 @@ views
 1. 先更新 git pull
 2. dir 查看文件目录
 3. 删除 git rm -r --cached + 文件名
-4. 提交 git commi -m"提交说明"
+4. 提交 git commit -m"提交说明"
 5. git push 上传代码到githup
 
 # 数据库操作
