@@ -61,7 +61,7 @@ app.use( bodyParser.urlencoded({extended: true}));
  * 第一个参数表示模板的文件 相对于views目录
  * 第二个参数，传递模板使用的数据
  */
-// app.get('/', function(req, res, next) {
+// app.get('/admin', function(req, res, next) {
 //     res.send('<h1>这是我的第一个博客</h1>');
 //     res.render('index');
 // });
@@ -70,7 +70,7 @@ app.use( bodyParser.urlencoded({extended: true}));
  * 第一个参数匹配以'/admin'开头的路径（这里路径说的是客户端）
  * 第二个参数是路径匹配后执行的功能
  */
-app.use('/admin', require('./routers/admin'));
+app.use('/user', require('./routers/admin'));
 app.use('/api', require('./routers/api'));
 app.use('/', require('./routers/main'));
 

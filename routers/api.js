@@ -16,25 +16,26 @@ router.use(function(req, res, next){
 	next();
 });
 
-router.post('/user/register', function (req, res, next) {
+//用户注册
+router.post('/user/register', function (req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
-	if( username == '' ) {
+	if( username == '' || username == undefined ) {
 		responseData.code = 1;
 		responseData.message = '用户名不能为空';
 		res.json(responseData); //把数据返回给前端
 		return;
 	}
-	if( password == '' ) {
+	if( password == '' || password == undefined) {
 		responseData.code = 2;
 		responseData.message = '密码不能为空';
 		res.json(responseData);
 		return;
 	}
+	//查询数据库
 	User.findOne({
 		username: username
 	}).then(function(e){
-		console.log(e);
 		if(e){
 			responseData.code = 3;
 			responseData.message = '用户名已经注册';
@@ -47,12 +48,86 @@ router.post('/user/register', function (req, res, next) {
 			username: username,
 			password: password
 		});
-		return user.save();
-	}).then(function(newinfo){
-		console.log(newinfo);
+		responseData.code = 200;
 		responseData.message = '注册成功';
-		res.json();
-	});
+		//更新数据库
+		return user.save().then(function(newinfo){
+			responseData.newinfo = newinfo;
+			res.json(responseData);
+			return;
+		});
+	})
 });
+//用户登录
+router.post('/user/login',function(req, res) {
+	var username = req.body.username;
+	var password = req.body.password;
+	if( username == '' || username == undefined ) {
+		responseData.code = 1;
+		responseData.message = '用户名不能为空';
+		res.json(responseData); 
+		return;
+	}
+	if( password == '' || password == undefined) {
+		responseData.code = 2;
+		responseData.message = '密码不能为空';
+		res.json(responseData);
+		return;
+	}
+	//查询数据库
+	User.findOne({
+		username: username,
+		password: password
+	}).then(function(e){
+		if(e){
+			responseData.code = 200;
+			responseData.message = '登录成功';
+			res.json(responseData);
+			return;
+		}else{
+			responseData.code = 0;
+			responseData.message = '用户名或密码错误';
+			res.json(responseData);
+		}
+	})
+
+});
+// 设置管理员 //未完成的需求
+router.post('/setting/admin', function(req, res) {
+	var username = req.body.username;
+	var isAdmin = req.body.isAdmin;
+	console.log(req.body)
+	User.replaceOne(
+		{name: username}
+    	).then(function(e){
+		console.log(e)
+		responseData.newinfo = newinfo;
+		responseData.code = 200;
+		responseData.message = '修改成功';
+		res.json(responseData);
+	})
+	// User.findOne({
+	// 	username: username
+	// }).then(function(e) {
+	// 	console.log(e)
+	// 	if(e) {
+	// 		var user = new User({
+	// 			username: username,
+	// 			isAdmin: isAdmin
+	// 		});
+	// 		return user.update().then(function(newinfo){
+	// 			responseData.newinfo = newinfo;
+	// 			responseData.code = 200;
+	// 			responseData.message = '修改成功';
+	// 			res.json(responseData);
+	// 			return;
+	// 		});
+	// 	}
+	// 	responseData.code = 0;
+	// 	responseData.message = '没有此用户';
+	// 	res.json(responseData);
+	// })
+})
+
 
 module.exports = router;

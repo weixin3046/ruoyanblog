@@ -1,10 +1,15 @@
 # 目录
-db
-models
-piblic
-routers
-schemas
-views
+db 数据库存储目录
+models  数据库模型文件目录
+piblic  公共文件目录（css, js, image...)
+routers 路由文件目录
+schemas 数据库结构文件目录（scheam）
+views  模板视图文件目录
+app.js  应用（启动）入口文件
+
+# 管理
+先启动数据库，在通过可视化工具链接，最后启动node app.js
+ 
 
 # 只删除githup目录不删除本地目录  
 1. 先更新 git pull
@@ -13,8 +18,8 @@ views
 4. 提交 git commit -m"提交说明"
 5. git push 上传代码到githup
 
-# 数据库操作
-1. mongod --dbpath=D:\runzhong\Node\ruoyanblog\db --port=27018
+# 数据库启动
+1. 在mongodb的bin目录下执行mongod --dbpath=D:\runzhong\Node\ruoyanblog\db --port=27018
 2. 数据库下载地址 https://www.mongodb.com/download-center/community
 3. 图形化mongodb数据库管理工具  https://robomongo.org/
 4. 从 MongoDB 目录的 bin 目录中执行 mongod.exe 文件
